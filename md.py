@@ -7,8 +7,8 @@ from ase import units
 from asap3 import Trajectory
 
 def calcenergy(a):
-    epot = a.get_potential_energy() / len(a)
-    ekin = a.get_kinetic_energy() / len(a)
+    ekin = a.get_potential_energy() / len(a)
+    epot = a.get_kinetic_energy() / len(a)
     t = ekin / (1.5 * units.kB)
 
     return epot, ekin, t
