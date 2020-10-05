@@ -30,9 +30,10 @@ class MdTests(unittest.TestCase):
         
         epot, ekin, t = calcenergy(atoms)
 
-        self.assertTrue(abs(epot - (- 0.0006011545839377735)) < 0.000000000000001, "epot not correct")
-        self.assertTrue(abs(ekin - 120.67373765985793) < 0.000000000000001, "ekin not correct")
-        self.assertTrue(abs(t - 933574.033856577)< 0.000000000001, "t not correct") 
+        tresh = 0.00000000000001
+        self.assertTrue(abs(epot - (- 0.0006011545839377735)) < tresh, "epot not correct")
+        self.assertTrue(abs(ekin - 120.67373765985793) < tresh, "ekin not correct")
+        self.assertTrue(abs(t - 933574.033856577)< tresh, "t not correct") 
 
 if __name__ == '__main__':
     tests = [unittest.TestLoader().loadTestsFromTestCase(MdTests)]
